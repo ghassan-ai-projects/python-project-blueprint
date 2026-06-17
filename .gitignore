@@ -1,0 +1,42 @@
+# --- Python artifacts ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+
+# --- Virtual environments ---
+.venv/
+venv/
+
+# --- Tool caches ---
+.coverage
+.coverage.*
+.mypy_cache/
+.pre-commit-cache/
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+htmlcov/
+
+# --- Build output ---
+build/
+dist/
+
+# --- Environment & secrets ---
+.env
+.env.*
+!.env.example
+
+# --- IDE / Editor ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# --- OS ---
+.DS_Store
+Thumbs.db

@@ -1,0 +1,95 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "python-project-blueprint"
+version = "0.1.0"
+description = "Production-ready scaffolding for Python projects that expect humans and coding agents to work in the same repository."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [
+  { name = "Replace Me", email = "author@example.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/your-org/python-project-blueprint"
+Repository = "https://github.com/your-org/python-project-blueprint"
+Issues = "https://github.com/your-org/python-project-blueprint/issues"
+
+[dependency-groups]
+dev = [
+  "coverage[toml]>=7.8",
+  "mypy>=1.18",
+  "pre-commit>=4.3",
+  "pytest>=8.4",
+  "pytest-cov>=6.2",
+  "ruff>=0.12",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/python_project_blueprint"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/python_project_blueprint",
+  "tests",
+  "README.md",
+  "LICENSE",
+  "pyproject.toml",
+]
+
+[tool.pytest.ini_options]
+addopts = [
+  "-q",
+  "--import-mode=importlib",
+  "--strict-config",
+  "--strict-markers",
+  "--cov=python_project_blueprint",
+  "--cov-report=term-missing",
+  "--cov-fail-under=90",
+]
+testpaths = ["tests"]
+xfail_strict = true
+
+[tool.coverage.run]
+branch = true
+source = ["python_project_blueprint"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unreachable = true
+show_error_codes = true
+pretty = true
+mypy_path = ["src"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "C4", "UP", "SIM", "PIE", "PTH", "RET", "ARG", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["ARG001"]
