@@ -30,7 +30,7 @@ A change is done when:
 - Production-code behavior changes include meaningful tests.
 - When feasible, production-code behavior changes start with a failing or expectation-setting test.
 - `make ci-check` passes, unless the change is documentation-only and a narrower check is clearly sufficient.
-- `git diff --check` passes, and `uv run pre-commit run --all-files` passes when `pre-commit` is installed.
+- `git diff --check` passes, and the installed pre-commit hooks pass at commit and push time.
 - Documentation is updated when behavior, commands, setup, or agent expectations change.
 - Secrets are not added, security-sensitive changes are called out, and dependency or workflow permission changes receive extra review.
 - `Makefile`, `pyproject.toml`, CI, hooks, and documented commands agree.
@@ -38,6 +38,7 @@ A change is done when:
 
 ```bash
 make help
+make hooks
 make ci-check
 ```
 

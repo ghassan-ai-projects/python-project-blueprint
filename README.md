@@ -57,7 +57,7 @@ Setup:
 git clone https://github.com/your-org/python-project-blueprint.git
 cd python-project-blueprint
 uv sync --group dev
-uv run pre-commit install
+make hooks
 make ci-check
 ```
 
@@ -66,6 +66,7 @@ Then replace the template placeholders called out in `AGENTS.md`, `README.md`, `
 ## Quality
 
 ```bash
+make hooks
 make ci-check
 make format-check
 make lint
@@ -76,6 +77,8 @@ make build
 ```
 
 CI runs the same core quality gates on a Python version matrix.
+
+Installed pre-commit hooks run fast hygiene, formatting, linting, and typing checks on commit, then run tests and builds on push.
 
 ## For Coding Agents
 

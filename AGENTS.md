@@ -54,7 +54,7 @@ Setup checklist after cloning or forking:
 3. Update placeholder URLs, author metadata, and descriptions in `pyproject.toml` and `README.md`.
 4. Update the package references in `tests/` and any example modules.
 5. Install dependencies with `uv sync --group dev`.
-6. Install the git hook with `uv run pre-commit install`.
+6. Install the pre-commit hooks with `make hooks`.
 7. Run `make ci-check` once to confirm everything is green.
 
 Keep `AGENTS.md` canonical. Tool-specific files should bridge to it instead of duplicating rules.
@@ -130,13 +130,13 @@ See [.agents/context/architecture.md](.agents/context/architecture.md) for the c
 Primary commands:
 
 - `uv sync --group dev`
+- `make hooks`
 - `make ci-check`
 - `uv run --python 3.12 --group dev pytest`
 - `uv run --python 3.12 --group dev ruff check .`
 - `uv run --python 3.12 --group dev mypy src tests`
 - `uv build`
 - `git diff --check`
-- `uv run --python 3.12 --group dev pre-commit run --all-files`
 
 Important template behavior:
 

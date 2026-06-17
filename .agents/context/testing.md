@@ -5,13 +5,13 @@
 Use these commands unless the task is documentation-only:
 
 - `uv sync --group dev`
+- `make hooks`
 - `make ci-check`
 - `make test`
 - `make typecheck`
 - `make lint`
 - `make build`
 - `git diff --check`
-- `uv run --python 3.12 --group dev pre-commit run --all-files`
 
 ## Template-Specific Behavior
 
@@ -19,6 +19,7 @@ Use these commands unless the task is documentation-only:
 - Coverage is part of the default pytest run.
 - `mypy` runs in strict mode by default.
 - `ruff` handles both formatting and linting.
+- Installed pre-commit hooks run formatting, linting, and typing checks on commit, then tests and builds on push.
 
 ## Test Quality Bar
 
