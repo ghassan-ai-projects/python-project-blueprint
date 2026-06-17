@@ -49,4 +49,4 @@ jobs:
         run: uv sync --group dev
 
       - name: CI check
-        run: make ci-check
+        run: make ci-check PYTHON=${{ matrix.python-version }}
