@@ -1,5 +1,7 @@
 # Python Project Blueprint
 
+> **Author:** [Ghassan Alhamoud](https://ghassan-alhamoud.com)
+
 Production-ready scaffolding for Python projects that expect humans and coding agents to work in the same repository.
 
 This template gives agents a crisp operating contract, gives humans reproducible quality gates, and keeps the two aligned through `AGENTS.md`, `uv`, `ruff`, `mypy`, `pytest`, pre-commit hooks, CI, and a small set of bridge files.
